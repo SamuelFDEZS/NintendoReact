@@ -3,7 +3,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import Search from './Components/search';
 import CharacterCards from './Components/characterCards';
-
+import NavBar from "./Components/navBar"
 function App() {
 
   const [characters, setCharacters] = useState([])
@@ -14,16 +14,20 @@ function App() {
     const res = await response.json();
     setCharacters(res.filter((character) => character.nombre.toLowerCase().includes(filter.toLowerCase())
     ))
-}
+  }
 
-console.log(characters)
-useEffect(() => {
-  get();
-}, [filter])
+  console.log(characters)
+  useEffect(() => {
+    get();
+  }, [filter])
   return (
     <div className="App-header">
-      <Search filter={filter} setFilter={setFilter}/>
-      <CharacterCards characters={characters}/>
+    <NavBar/>
+      
+      <section 
+      className='section-characters'>
+      <Search filter={filter} setFilter={setFilter} />
+      <CharacterCards characters={characters} /></section>
     </div>
   );
 }
