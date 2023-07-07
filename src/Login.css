@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body{
+    min-height: 100vh;
+}
+
+div.background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("https://fondosmil.com/fondo/53689.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+
+aside.login{
+    position: absolute;
+    width: 30%;
+    height: 99vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid black;
+    background-color: rgb(32, 31, 31);
+    z-index: 2;
+
+}
+
+aside.login-email{
+    z-index: 5;
+    translate: -100% 0;
+    transition: 0.5s;
+}
+
+aside.visible{
+    translate: 0;
+}
+
+aside.login > h2{
+    width: 50%;
+    color: #fff;
+    font-size: 2.2em;
+    margin-right: 15%;
+    margin-top: 30%;
+}
+
+aside.login > p{
+    width: 50%;
+    color: #666565;
+    margin-right: 15%;
+}
+
+.input-box{
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    margin-right: 15%;
+    margin-top: 20%;
+}
+
+.name{
+    position: absolute;
+    top: 10%;
+    left: 0;
+    translate:0 -50%;
+    width: 15vw;
+    height: 5vh;
+    background: transparent;
+    border-bottom: 2px solid #888888;
+    padding-left: 10px;
+    font-size: 1.2em;
+    color: white;
+    transition: 0.5s;
+}
+
+.name:focus{
+    border-bottom: 2px solid #447ffd;
+    outline: none;
+}
+
+.div-label{
+    position: absolute;
+    font-size: 1em;
+    top: 10%;
+    left: 0;
+    padding: 2%;
+    translate:10% -50%;
+    color: #888888;
+    transition: 0.6s;
+    white-space: nowrap;
+}
+
+.input-box > :is(.name:focus, .has-value) ~ .div-label{
+    translate: 10% -41px;
+    background: inherit;
+    color: rgb(255 255 255 / 85%)
+
+}
+
+button.button{
+    color: #fff;
+    font-size: 1em;
+    margin-top: 20%;
+    margin-right: 15%;
+    border-radius: 4px;
+    text-align: left;
+    font-weight: 700;
+    background: linear-gradient(220.55deg, #3793FF 0%, #0017E4 100%);
+}
+
+button.button:hover{
+    cursor: pointer;
+    background: linear-gradient(220.55deg,#0017E4 0%, #3793FF 100%);
+}
+
+button.login-button{
+    width: 15vw;
+    height: 7%;
+    padding: 0 6%;
+}
+button.back{
+    background: transparent;
+    align-self: flex-start;
+    margin: 5%;
+    font-size: 2em;
+}
+
+button.back{
+    color:#888888;
+    transition: 0.5s;
+}
+
+button.back:hover{
+    cursor: pointer;
+    color: #fff;
+}
+
+button.next-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    width: 8vw;
+    height: 8%;
+}
+
+div.error{
+    width: 70%;
+    font-size: 1em;
+    color: red;
+    margin-top: 15%;
+}

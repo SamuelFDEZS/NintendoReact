@@ -1,4 +1,4 @@
-const Search = ({setFilter}) => {
+const Search = ({filter, setFilter}) => {
     const changeFilter = (event) => {
         setFilter(event.target.value)
     }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const NavBar = () => {
     const navBar = document.querySelector(".nav")
     const [nameOfClass, setNameOfClass] = useState("nav")
@@ -9,11 +10,8 @@ const NavBar = () => {
         let { pageYOffset } = window;
         if (pageYOffset > scrollTop) {
             setNameOfClass("nav")
-            console.log(scrollTop)
-            console.log(nameOfClass)
         } else if (pageYOffset < scrollTop) {
             setNameOfClass("nav visible")
-            console.log(nameOfClass)
         }
 
         setScrollTop(pageYOffset <= 0 ? 0 : pageYOffset);
@@ -22,10 +20,10 @@ const NavBar = () => {
     );
     return (
         <nav className={nameOfClass}>
-            <h1 className="nav-h1">NintendoApi</h1>
+            <h1 className="nav-h1"><Link to={'/'}>NintendoApi</Link></h1>
             <ul className="nav-ul">
-                <li>Home</li>
-                <li>About</li>
+                <li><Link to={'/'}>Home</Link></li>
+                <li><Link to={'/vilains'}>Vilains</Link></li>
                 <li>Contact</li>
             </ul>
         </nav>
