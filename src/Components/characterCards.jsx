@@ -3,7 +3,7 @@ import Search from "./Search"
 const CharacterCards = ({ characters, setCharacters, filter }) => {
 
     const get = async () => {
-        const response = await fetch("http://localhost:5000/mainCharacters");
+        const response = await fetch("https://nintendo-node-js.vercel.app/mainCharacters");
         const res = await response.json();
         setCharacters(res.filter((character) => character.nombre.toLowerCase().includes(filter.toLowerCase())
         ))
@@ -13,17 +13,15 @@ const CharacterCards = ({ characters, setCharacters, filter }) => {
     useEffect(() => {
         get();
     }, [filter])
-    return characters.map((character) => {
+    return characters.map((character, index) => {
         return (
-            <>
-                <article className="character-card">
+                <article key={index} className="character-card">
                     <img src={character.imagen} alt="Imagen del personaje" />
                     <div className="character-information">
                         <h1>{character.nombre}</h1>
                         <p className="description">{character.descripcion}</p>
                     </div>
                 </article>
-            </>
         )
     })
 }

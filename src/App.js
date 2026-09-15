@@ -18,7 +18,7 @@ function App() {
   const navigate = useNavigate();
 
   const connectUsers = async () => {
-    const response = await fetch("http://localhost:5000/users")
+    const response = await fetch("https://nintendo-node-js.vercel.app/users")
     const res = await response.json()
     await setArrayUsers(res)
   }
@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div className="App-header">
-      <userContext.Provider value={user == "" ? null : user}>
+      <userContext.Provider value={user === "" ? null : user}>
         <Routes>
           <Route path="/" element={
             <>
