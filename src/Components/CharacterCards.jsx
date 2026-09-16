@@ -11,7 +11,7 @@ const CharacterCards = ({ characters, setCharacters, filter }) => {
 
         get();
 
-    }, [filter])
+    }, [filter, setCharacters])
     return characters.map((character, index) => {
         return (
             <article key={index} className="character-card">
