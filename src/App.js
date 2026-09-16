@@ -1,13 +1,13 @@
 import logo from './logo.svg';
-import './App.css';
+import '/src/App.css';
 import { useEffect, useState, useContext} from 'react';
-import Search from './Components/Search';
+import Search from '/src/Components/Search';
 import CharacterCards from './Components/CharacterCards';
-import NavBar from "./Components/NavBar";
+import NavBar from "/src/Components/NavBar";
 import {Route, Routes, useNavigate } from 'react-router-dom';
-import NotFound from './Components/NotFound';
+import NotFound from '/src/Components/NotFound';
 import { userContext } from './Context/UserContext';
-import Login from './Components/Login';
+import Login from '/src/Components/Login';
 function App() {
 
   const [characters, setCharacters] = useState([])
