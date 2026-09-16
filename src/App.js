@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import '/src/App.css';
 import { useEffect, useState, useContext} from 'react';
 import Search from '/src/Components/Search';
-import CharacterCards from './Components/CharacterCards';
+import CharacterCards from '/src/Components/CharacterCards';
 import NavBar from "/src/Components/NavBar";
 import {Route, Routes, useNavigate } from 'react-router-dom';
 import NotFound from '/src/Components/NotFound';
