@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-import { useEffect, useState, useContext} from 'react';
+import { useEffect, useState, useContext } from 'react';
 import Search from './Components/Search.jsx';
 import CharacterCards from './Components/CharacterCards.jsx';
 import NavBar from "./Components/NavBar.jsx";
-import {Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import NotFound from './Components/NotFound.jsx';
 import { userContext } from './Context/UserContext.jsx';
 import Login from './Components/Login.jsx';
@@ -17,14 +16,18 @@ function App() {
   const [error, setError] = useState('')
   const navigate = useNavigate();
 
-  const connectUsers = async () => {
-    const response = await fetch("https://nintendo-node-js.vercel.app/users")
-    const res = await response.json()
-    await setArrayUsers(res)
-  }
-  
-  
-  useEffect(() => connectUsers, [user])
+
+
+  useEffect(() => {
+
+    const connectUsers = async () => {
+      const response = await fetch("https://nintendo-node-js.vercel.app/users")
+      const res = await response.json();
+      setArrayUsers(res)
+    }
+
+    connectUsers();
+  }, [user])
 
   const loginUser = (formData, prevRoute) => {
 
@@ -59,7 +62,7 @@ function App() {
               </section>
             </>}
           />
-          <Route path='login' element={<Login loginUser = {loginUser} error = {error}/>} />
+          <Route path='login' element={<Login loginUser={loginUser} error={error} />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </userContext.Provider>

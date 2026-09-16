@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 const NavBar = () => {
-    const navBar = document.querySelector(".nav")
     const [nameOfClass, setNameOfClass] = useState("nav")
     const [scrollTop, setScrollTop] = useState(0)
 

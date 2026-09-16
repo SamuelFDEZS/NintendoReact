@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react"
-import Search from "./Search"
+import { useEffect} from "react"
 const CharacterCards = ({ characters, setCharacters, filter }) => {
 
     const get = async () => {
